@@ -1,0 +1,15 @@
+<div class="content">
+  <h4>Lets send some data!</h4>
+  <form class="form-signin">
+    <!--Uses Angular API to apply a specific model into the textbox-->
+    <input type="text" ng-model="formStuff.formName" class="form-control" placeholder="Name" required autofocus>
+    <br/>
+    <p>Write something about yourself</p>
+    <!--Uses Angular API to apply a specific model into the textarea-->
+    <textarea ng-model="formStuff.formDescription" style="width:400px;height:100px;"></textarea>
+    <br/>
+    <!--Uses Angular API to apply a specific function into the button-->
+    <button class="btn btn-warning with-border" type="submit" ng-click="sendData();">Send</button>
+    <br/>
+  </form>
+</div>
