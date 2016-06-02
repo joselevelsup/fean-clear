@@ -70,7 +70,7 @@ app.controller("sendCtrl", function($scope, $state, $http){ //Controls the Send 
   $scope.sendData = function(){
     $http.post("/layout/senddata", $scope.formStuff) //sends the data to the backend
       .success(function(data){
-        $state.go("layout.get"); //If successful, it will go to another state which here is the GetData state
+        console.log("Success");
       })
       .error(function(err){
         console.log("Messed up: "+err); //If error, It will throw the area in the frontend console
@@ -79,14 +79,14 @@ app.controller("sendCtrl", function($scope, $state, $http){ //Controls the Send 
 });
 
 app.controller("getCtrl", function($scope, $http){ //controls the Get Page
-  $scope.getData = function(){
-    $http.get("URL-to-your-Firebase") //Pull in the data from the Database using a http request and in json 
-format
+  $scope.getData = function(){ //By using Angular's HTTP request, it makses it easier to retrieve and sort the data
+    $http.get("<url to database>.json")
       .success(function(data){
-        console.log(data); //If successful, the data will be inputed into the console as JSON
+        $scope.data = data;
+        console.log(data);
       })
       .error(function(err){
-        console.log("Messed Up: "+err); //If error, It will throw an error in the frontend console
-      });
+        console.log(err);
+      })
   }
 });

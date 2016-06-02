@@ -1,11 +1,9 @@
 <div class="content">
   <h4>Lets get some data!</h4>
-  <button class="btn btn-warning with-border" ng-click="getData();">Get Data</button>
+  <button ng-click="getData();">Get Data</button>
   <!-- Uses Angular API to repeat the amount of data that is in the Angular Global Variable. Kind of like a for loop-->
-  <div ng-repeat="s in stuff">
+  <div ng-repeat="s in data">
     <p>JSON Object: {{s}}</p>
-    <p>Name: {{s.name}}</p>
-    <p>Description of {{s.name}}: {{s.description}}</p>
     <br/>
   </div>
 </div>
